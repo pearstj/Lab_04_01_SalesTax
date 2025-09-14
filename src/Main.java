@@ -1,15 +1,26 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+import java.util.Scanner;
+class Lab_04_01_SalesTax {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Declare constant for sales tax rate
+        final double SALES_TAX_RATE = 0.05;
+
+        // Prompt the user to enter the purchase price
+        System.out.print("Enter the price of the purchase: $");
+        double purchasePrice = scanner.nextDouble();
+
+        // Calculate the sales tax
+        double salesTax = purchasePrice * SALES_TAX_RATE;
+
+        // Display the original price and the computed sales tax
+        System.out.printf("Purchase Price: $%.2f%n", purchasePrice);
+        System.out.printf("Sales Tax (5%%): $%.2f%n", salesTax);
+
+        // Close the scanner
+        scanner.close();
     }
 }
